@@ -1,0 +1,5 @@
+Tools Used:
+
+1. Name: World Map SVG, URL: https://mapsvg.com/maps/world
+2. Name: World Bank API, URL: https://datahelpdesk.worldbank.org/knowledgebase/articles/898581-api-basic-call-structures
+3. Name: Angular Framework, URL: https://angular.io/

@@ -1,0 +1,44 @@
+#header{
+    background-color: gray;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 100px;
+    justify-content: center;
+    height: 200px;
+    width: 100%;
+    size: 100px;
+    list-style: none;  
+}
+
+#bodyContainer{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+}
+
+#pageContainer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.map{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 300px;
+}

@@ -1,0 +1,17 @@
+<section id = pageContainer>
+    <div id="header">
+        <header class="uppercase text-center text-xs tracking-widest p-2 bg-white">
+            <a href="https://www.worldbank.org/en/home" class="font-bold">The World Bank</a> Interactive Map
+        </header>
+    </div>
+    <div id = 'bodyContainer'>
+        <div class = 'data'>
+            <app-interactive-map-card [container]="clickedCountry">
+            </app-interactive-map-card>
+        </div>
+        <div class = 'map'>
+            <app-interactive-map (clickedCountry)="passCountry($event)">
+            </app-interactive-map>
+        </div>
+    </div>
+</section>

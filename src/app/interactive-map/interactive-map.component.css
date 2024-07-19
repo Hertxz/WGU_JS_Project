@@ -7,9 +7,6 @@ svg path:hover{
 }
 
 dialog{
-    margin-top: 700px
+    margin-top: 700px;
    
-}
-svg path:hover dialog{
-    visibility: visible;
 }

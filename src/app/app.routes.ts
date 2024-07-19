@@ -5,7 +5,6 @@ import { InteractiveMapComponent } from './interactive-map/interactive-map.compo
 import { InteractiveMapCardComponent } from './interactive-map-card/interactive-map-card.component';
 import { InteractiveMapWrapperComponent } from './interactive-map-wrapper/interactive-map-wrapper.component';
 
-//import the components from their files location
 export const routes: Routes = [
     {path: 'interactive-map', component: InteractiveMapComponent},
     {path: 'interactive-map-card', component: InteractiveMapCardComponent},

@@ -1,8 +1,9 @@
 import { Component,Output, EventEmitter, OnInit} from '@angular/core';
 import { ApiService } from '../api-service/api.service';
 import { apiContainter } from '../api-service/api.container-class';
-//Import the app API
 
+
+//Import the app API
 @Component({
   selector: 'app-interactive-map',
   standalone: true,
@@ -12,12 +13,12 @@ import { apiContainter } from '../api-service/api.container-class';
 })
 
 export class InteractiveMapComponent implements OnInit{
-  
+
+  constructor(private countryAPI: ApiService){}
 
   @Output() clickedCountry = new EventEmitter<any>();
 
   countryContainer = new apiContainter();
-  countryAPI = new ApiService();
   countryData!: any;
 
   ngOnInit(): void {
@@ -31,13 +32,17 @@ export class InteractiveMapComponent implements OnInit{
   selectedCountry(event: MouseEvent){
     const path = event.target as SVGAElement;
     const countryID = path.id;
-    this.countryData = this.countryAPI.getCountryInfo(countryID).then((data) =>{
-    this.countryContainer.countryName = data.name;
-    this.countryContainer.countryCapital = data.capitalCity;
-    this.countryContainer.countryRegion = data.region.value;
-    this.countryContainer.countryIL = data.incomeLevel.value
-    this.countryContainer.countryLat = data.latitude;
-    this.countryContainer.countryLong = data.longitude;
+    this.countryData = this.countryAPI.getCountryInfo(countryID).subscribe((data: any) =>{
+    this.countryContainer.countryName = data[1][0].name;
+    this.countryContainer.countryCapital = data[1][0].capitalCity;
+    this.countryContainer.countryRegion = data[1][0].region.value;
+    this.countryContainer.countryIL = data[1][0].incomeLevel.value
+    this.countryContainer.countryLat = data[1][0].latitude;
+    this.countryContainer.countryLong = data[1][0].longitude;
+    console.log(
+      data[1],
+      this.countryContainer
+    )
 
     this.clickedCountry.emit(this.countryContainer)
     })

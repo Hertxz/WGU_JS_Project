@@ -1,3 +1,4 @@
+import { HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable(
@@ -8,17 +9,12 @@ import { Injectable } from '@angular/core';
 
 export class ApiService {
 
+ constructor(private http: HttpClient){}
+
   apiURL = 'http://api.worldbank.org/v2/country/';
 
-  async queryCountryInfo(cName: String){
-    const info = await fetch(this.apiURL + cName +'?format=json');
+ getCountryInfo(cName: String){
+    const info = this.http.get(this.apiURL + cName +'?format=json');
     return info;
   }
-  async getCountryInfo(cName: String){
-    const info = await this.queryCountryInfo(cName);
-    const data = await info.json();
-    return data[1][0];
-  }
-
-
 }

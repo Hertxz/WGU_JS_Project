@@ -6,3 +6,10 @@ svg path:hover{
     fill: gray;
 }
 
+dialog{
+    margin-top: 700px
+   
+}
+svg path:hover dialog{
+    visibility: visible;
+}
